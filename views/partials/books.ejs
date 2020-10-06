@@ -1,0 +1,30 @@
+<section class="books">
+  <% data.forEach(list => { list.books.forEach(book => { %>
+  <article class="book card bg-ligh rounded-lg my-2" data-title="<%= book.title %>">
+    <div class="image-container rounded-lg">
+      <img class="cover rounded-left" src="<%= book.book_image %>" alt="book-cover" />
+    </div>
+    <div class="details card-body">
+      <h2 class="title card-title"><%= book.title %></h2>
+      <p class="card-subtitle my-2">by <strong><%= book.author %></strong></p>
+
+      <p class="card-text mt-4"><%= book.description %></p>
+      <div class="links">
+        <p class="text-muted">Buy the book:</p>
+        <% book.buy_links.forEach(link => { %>
+        <div class="link-container">
+          <a
+            class="buy-link card-link"
+            href="<%= link.url %>"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><%= link.name%></a
+          >
+        </div>
+        <% });%>
+      </div>
+    </div>
+  </article>
+
+  <% }); }); %>
+</section>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <title>Bestselling books by the New York Times</title>
+  </head>
+  <body>
+    <div class="container wrapper">
+      <main class="page-content container">
+        <section class="jumbotron rounded mt-3">
+          <h1 class="display-3">The latest bestselling books</h1>
+          <p class="lead ml-2">compiled by the New York Times</p>
+        </section>
+        <%- include(pageBody) %>
+      </main>
+      <footer class="footer w-100 text-center">
+        <span class="current-year"></span> © Anton Chernous
+      </footer>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
