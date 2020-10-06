@@ -47,7 +47,7 @@ app.get('/books', (req, res) => {
     }
   }
 `;
-  const url = `http://localhost:5000/graphql?query=${query}`;
+  const url = `http://process.env:PORT/graphql?query=${query}`;
   request(url, (error, response, body) => {
     if (!error && response.statusCode === 200) {
       const result = JSON.parse(body);
