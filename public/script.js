@@ -42,7 +42,7 @@ $(document).ready(function () {
   };
 })(jQuery);
 
-$('.book').removeDuplicates();
+$('.books').ready($('.book').removeDuplicates());
 
 // footer date
 const $date = new Date();
