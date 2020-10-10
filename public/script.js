@@ -18,31 +18,12 @@ $(document).ready(function () {
 });
 
 // remove duplicate books
-(function ($) {
-  $.fn.removeDuplicates = function () {
-    let $original = $([]);
-
-    this.each(function (i, el) {
-      const $el = $(el);
-      let isDuplicate;
-
-      $original.each(function (i, orig) {
-        if (el.isEqualNode(orig)) {
-          isDuplicate = true;
-          $el.remove();
-        }
-      });
-
-      if (!isDuplicate) {
-        $original = $original.add($el);
-      }
-    });
-
-    return $original;
-  };
-})(jQuery);
-
-$('.books').ready($('.book').removeDuplicates());
+const seen = {};
+$('.book').each(function () {
+  const txt = $(this).attr('data-title');
+  if (seen[txt]) $(this).remove();
+  else seen[txt] = true;
+});
 
 // footer date
 const $date = new Date();
